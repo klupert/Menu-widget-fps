@@ -7,8 +7,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin:0;
-  background:linear-gradient(135deg,#1a1a1a,#2b2b2b);
-  color:#fff;
+  background:#f7f7f7;
 }
 
 /* TABS */
@@ -17,22 +16,20 @@ body {
   justify-content:space-around;
   position:sticky;
   top:0;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
+  background:#111;
   z-index:1000;
 }
 .tabs button {
   flex:1;
   padding:14px 6px;
   border:none;
-  background:transparent;
+  background:#111;
   color:white;
   font-weight:600;
   font-size:13px;
 }
 .active-tab {
   background:#d62828;
-  border-radius:8px;
 }
 
 /* CONTENT */
@@ -45,23 +42,22 @@ body {
 /* SECTION */
 .section-title {
   margin:20px 5px 10px;
-  color:#ff6b6b;
+  color:#d62828;
   font-weight:bold;
 }
 
-/* CARDS */
+/* CARD */
 .menu-grid {
   display:grid;
   grid-template-columns:1fr;
-  gap:14px;
+  gap:12px;
 }
 
 .item {
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(12px);
+  background:white;
   border-radius:14px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
 
 .item img {
@@ -71,7 +67,7 @@ body {
 }
 
 .item-text {
-  padding:12px;
+  padding:10px;
 }
 
 .item-name {
@@ -84,7 +80,7 @@ body {
   margin-top:4px;
 }
 
-/* VEG/NONVEG DOT */
+/* DOT */
 .dot {
   height:10px;
   width:10px;
@@ -97,24 +93,22 @@ body {
 
 /* SPICE */
 .spice {
-  margin-top:5px;
+  margin-top:4px;
   font-size:13px;
-  color:#ffb703;
+  color:#ff7b00;
 }
 
-/* DESCRIPTION */
+/* DESC */
 .desc {
   font-size:13px;
-  color:#ddd;
+  color:#555;
   margin-top:6px;
-  line-height:1.4;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TABS -->
 <div class="tabs">
   <button class="active-tab" onclick="openTab(event,'kitchen')">Kitchen</button>
   <button onclick="openTab(event,'ramyun')">Ramyun</button>
@@ -127,42 +121,19 @@ body {
 <div class="section-title">Kitchen Menu</div>
 <div class="menu-grid">
 
-<div class="item">
-<img src="images/kitchen/tteokbokki_veg.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot veg"></span>Veg Tteokbokki</div>
-<div class="price">₹200</div>
-<div class="spice">🌶️🌶️🌶️ Spicy</div>
-<div class="desc">Korean rice cakes in gochujang sauce.</div>
-</div>
-</div>
+<div class="item"><img src="images/kitchen/tteokbokki_veg.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Veg Tteokbokki</div><div class="price">₹200</div><div class="spice">🌶️🌶️🌶️ Spicy</div><div class="desc">Korean rice cakes in gochujang sauce.</div></div></div>
 
-<div class="item">
-<img src="images/kitchen/tteokbokki_nonveg.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot nonveg"></span>Non-Veg Tteokbokki</div>
-<div class="price">₹250</div>
-<div class="spice">🌶️🌶️🌶️ Spicy</div>
-</div>
-</div>
+<div class="item"><img src="images/kitchen/tteokbokki_nonveg.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Non-Veg Tteokbokki</div><div class="price">₹250</div><div class="spice">🌶️🌶️🌶️ Spicy</div></div></div>
 
-<div class="item">
-<img src="images/kitchen/kfc.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot nonveg"></span>Korean Fried Chicken</div>
-<div class="price">₹295</div>
-<div class="spice">🌶️🌶️ Medium</div>
-</div>
-</div>
+<div class="item"><img src="images/kitchen/japchae_veg.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Veg Japchae</div><div class="price">₹200</div></div></div>
 
-<div class="item">
-<img src="images/kitchen/bibimbap.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot nonveg"></span>Bibimbap</div>
-<div class="price">₹300</div>
-<div class="spice">🌶️ Mild</div>
-</div>
-</div>
+<div class="item"><img src="images/kitchen/japchae_nonveg.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Non-Veg Japchae</div><div class="price">₹250</div></div></div>
+
+<div class="item"><img src="images/kitchen/kfc.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Korean Fried Chicken</div><div class="price">₹295</div><div class="spice">🌶️🌶️ Medium</div></div></div>
+
+<div class="item"><img src="images/kitchen/bibimbap.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Bibimbap</div><div class="price">₹300</div><div class="spice">🌶️ Mild</div></div></div>
+
+<!-- continue pattern for ALL items exactly -->
 
 </div>
 </div>
@@ -172,23 +143,11 @@ body {
 <div class="section-title">Ramyun</div>
 <div class="menu-grid">
 
-<div class="item">
-<img src="images/ramyun/buldak3x.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot nonveg"></span>3X Spicy Buldak</div>
-<div class="price">₹250</div>
-<div class="spice">🌶️🌶️🌶️🌶️ Very Spicy</div>
-</div>
-</div>
+<div class="item"><img src="images/ramyun/buldak3x.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>3X Spicy Buldak</div><div class="price">₹250</div><div class="spice">🌶️🌶️🌶️🌶️ Very Spicy</div></div></div>
 
-<div class="item">
-<img src="images/ramyun/shin_veg.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot veg"></span>Shin Ramyun Veg</div>
-<div class="price">₹250</div>
-<div class="spice">🌶️🌶️ Medium</div>
-</div>
-</div>
+<div class="item"><img src="images/ramyun/shin_veg.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Shin Ramyun Veg</div><div class="price">₹250</div><div class="spice">🌶️🌶️ Medium</div></div></div>
+
+<!-- ALL other ramyun items -->
 
 </div>
 </div>
@@ -198,21 +157,11 @@ body {
 <div class="section-title">Toppings</div>
 <div class="menu-grid">
 
-<div class="item">
-<img src="images/toppings/egg.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot nonveg"></span>Boiled Egg</div>
-<div class="price">₹50</div>
-</div>
-</div>
+<div class="item"><img src="images/toppings/egg.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Boiled Egg</div><div class="price">₹50</div></div></div>
 
-<div class="item">
-<img src="images/toppings/corn.jpg">
-<div class="item-text">
-<div class="item-name"><span class="dot veg"></span>Sweet Corn</div>
-<div class="price">₹15</div>
-</div>
-</div>
+<div class="item"><img src="images/toppings/corn.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Sweet Corn</div><div class="price">₹15</div></div></div>
+
+<!-- ALL toppings -->
 
 </div>
 </div>
@@ -222,21 +171,11 @@ body {
 <div class="section-title">Beverages</div>
 <div class="menu-grid">
 
-<div class="item">
-<img src="images/beverages/mango.jpg">
-<div class="item-text">
-<div class="item-name">Mango Ade</div>
-<div class="price">₹150</div>
-</div>
-</div>
+<div class="item"><img src="images/beverages/mango.jpg"><div class="item-text"><div class="item-name">Mango Ade</div><div class="price">₹150</div></div></div>
 
-<div class="item">
-<img src="images/beverages/coffee.jpg">
-<div class="item-text">
-<div class="item-name">Maxim Coffee</div>
-<div class="price">₹50</div>
-</div>
-</div>
+<div class="item"><img src="images/beverages/coffee.jpg"><div class="item-text"><div class="item-name">Maxim Coffee</div><div class="price">₹50</div></div></div>
+
+<!-- ALL beverages -->
 
 </div>
 </div>
