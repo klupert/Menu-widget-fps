@@ -28,7 +28,7 @@ body {
   font-weight:600;
   font-size:13px;
 }
-.active-tab {
+.tabs button.active-tab {
   background:#d62828;
 }
 
@@ -37,7 +37,9 @@ body {
   display:none;
   padding:12px;
 }
-.active { display:block; }
+.tab-content.active {
+  display:block;
+}
 
 /* SECTION */
 .section-title {
@@ -46,10 +48,15 @@ body {
   font-weight:bold;
 }
 
+.subcat {
+  margin:15px 5px 5px;
+  font-weight:bold;
+  color:#333;
+}
+
 /* CARD */
 .menu-grid {
   display:grid;
-  grid-template-columns:1fr;
   gap:12px;
 }
 
@@ -73,6 +80,20 @@ body {
 .item-name {
   font-weight:600;
   font-size:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.badge {
+  width:18px;
+  height:18px;
+  border:1.5px solid #444;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:3px;
+  font-size:12px;
 }
 
 .price {
@@ -80,25 +101,6 @@ body {
   margin-top:4px;
 }
 
-/* DOT */
-.dot {
-  height:10px;
-  width:10px;
-  border-radius:50%;
-  display:inline-block;
-  margin-right:6px;
-}
-.veg { background:#2ecc71; }
-.nonveg { background:#e74c3c; }
-
-/* SPICE */
-.spice {
-  margin-top:4px;
-  font-size:13px;
-  color:#ff7b00;
-}
-
-/* DESC */
 .desc {
   font-size:13px;
   color:#555;
@@ -121,19 +123,45 @@ body {
 <div class="section-title">Kitchen Menu</div>
 <div class="menu-grid">
 
-<div class="item"><img src="images/kitchen/tteokbokki_veg.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Veg Tteokbokki</div><div class="price">₹200</div><div class="spice">🌶️🌶️🌶️ Spicy</div><div class="desc">Korean rice cakes in gochujang sauce.</div></div></div>
+<div class="item"><img src="images/kitchen/tteokbokki_veg.jpg"><div class="item-text"><div class="item-name">Veg. Tteokbokki <span class="badge">🟢</span></div><div class="price">₹200</div><div class="desc">Authentic Korean-style Rice Cakes simmered in a sweet-spicy gochujang sauce with a mix of veggies.</div></div></div>
 
-<div class="item"><img src="images/kitchen/tteokbokki_nonveg.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Non-Veg Tteokbokki</div><div class="price">₹250</div><div class="spice">🌶️🌶️🌶️ Spicy</div></div></div>
+<div class="item"><img src="images/kitchen/tteokbokki_nonveg.jpg"><div class="item-text"><div class="item-name">Non-Veg Tteokbokki <span class="badge">🔺</span></div><div class="price">₹250</div><div class="desc">Made the same as veg with the addition of fishcakes and boiled eggs</div></div></div>
 
-<div class="item"><img src="images/kitchen/japchae_veg.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Veg Japchae</div><div class="price">₹200</div></div></div>
+<div class="item"><img src="images/kitchen/japchae_veg.jpg"><div class="item-text"><div class="item-name">Veg. Japchae <span class="badge">🟢</span></div><div class="price">₹200</div><div class="desc">Silky glass noodles tossed with colourful veggies in a rich, savoury glaze.</div></div></div>
 
-<div class="item"><img src="images/kitchen/japchae_nonveg.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Non-Veg Japchae</div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/kitchen/japchae_nonveg.jpg"><div class="item-text"><div class="item-name">Non-Veg Japchae <span class="badge">🔺</span></div><div class="price">₹250</div><div class="desc">Made the same as veg with the addition of tender chicken slices</div></div></div>
 
-<div class="item"><img src="images/kitchen/kfc.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Korean Fried Chicken</div><div class="price">₹295</div><div class="spice">🌶️🌶️ Medium</div></div></div>
+<div class="item"><img src="images/kitchen/riceballs_veg.jpg"><div class="item-text"><div class="item-name">Veg. Rice Balls <span class="badge">🟢</span></div><div class="price">₹150</div><div class="desc">Korean rice balls, also known as Jumeokbap, are hand-shaped balls made from sticky rice mixed with various vegetable fillings and seaweed.</div></div></div>
 
-<div class="item"><img src="images/kitchen/bibimbap.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Bibimbap</div><div class="price">₹300</div><div class="spice">🌶️ Mild</div></div></div>
+<div class="item"><img src="images/kitchen/riceballs_nonveg.jpg"><div class="item-text"><div class="item-name">Non-Veg Rice Balls <span class="badge">🔺</span></div><div class="price">₹200</div><div class="desc">Triangle shaped rice balls made from sticky rice mixed with vegetables & filled with minced pork bulgogi with a seaweed sheet on top.</div></div></div>
 
-<!-- continue pattern for ALL items exactly -->
+<div class="item"><img src="images/kitchen/kimbap_veg.jpg"><div class="item-text"><div class="item-name">Veg-Mini Kimbap <span class="badge">🟢</span></div><div class="price">₹160</div><div class="desc">A smaller version of the traditional larger Korean Kimbap filled with vegetables like carrots, radish, spinach, cucumber and more.</div></div></div>
+
+<div class="item"><img src="images/kitchen/kimbap_nonveg.jpg"><div class="item-text"><div class="item-name">Non-Veg Mini Kimbap <span class="badge">🔺</span></div><div class="price">₹180</div><div class="desc">Made similar to the Veg. version with the addition of our chef's special fried chicken</div></div></div>
+
+<div class="item"><img src="images/kitchen/cheese_corndog.jpg"><div class="item-text"><div class="item-name">Cheese Corndog <span class="badge">🟢</span></div><div class="price">₹180</div><div class="desc">A classic Korean street food made with mozzarella cheese coated with our in-house batter and panko coating topped with mustard, ketchup & sugar for added flavour.</div></div></div>
+
+<div class="item"><img src="images/kitchen/chicken_corndog.jpg"><div class="item-text"><div class="item-name">Chicken Corndog <span class="badge">🔺</span></div><div class="price">₹180</div><div class="desc">A classic Korean street food made with frankfurter chicken sausage coated with our in-house batter and panko coating topped with mustard, ketchup & sugar for added flavour.</div></div></div>
+
+<div class="item"><img src="images/kitchen/bulgogi.jpg"><div class="item-text"><div class="item-name">Pork Bulgogi <span class="badge">🔺</span></div><div class="price">₹350</div><div class="desc">Tender slices of marinated pork ribs stir-fried in a savoury gochujang soy glaze. Served with fresh lettuce wraps, steamed rice & Kimchi</div></div></div>
+
+<div class="item"><img src="images/kitchen/bibimbap.jpg"><div class="item-text"><div class="item-name">Bibimbap <span class="badge">🔺</span></div><div class="price">₹300</div><div class="desc">A popular Korean dish consisting of a bowl of a variety of seasonal vegetables, tender chicken, gochujang & sesame oil layered on top of warm rice, topped with a runny fried egg.</div></div></div>
+
+<div class="item"><img src="images/kitchen/shrimpballs.jpg"><div class="item-text"><div class="item-name">Shrimp Balls <span class="badge">🔺</span></div><div class="price">₹250</div><div class="desc">Super crunchy exterior with tender seasoned shrimp stuffing. 4 Shrimp balls served with a sweet tangy Tonkatsu sauce</div></div></div>
+
+<div class="item"><img src="images/kitchen/kfc.jpg"><div class="item-text"><div class="item-name">Korean Fried Chicken <span class="badge">🔺</span></div><div class="price">₹295</div><div class="desc">Crispy sweet-spicy Korean styled fried chicken</div></div></div>
+
+<div class="item"><img src="images/kitchen/yachae.jpg"><div class="item-text"><div class="item-name">Yachae Jeon <span class="badge">🟢</span></div><div class="price">₹160</div><div class="desc">Crispy chewy Korean vegetable pancakes</div></div></div>
+
+<div class="item"><img src="images/kitchen/twigim.jpg"><div class="item-text"><div class="item-name">Twigim <span class="badge">🟢</span></div><div class="price">₹200</div><div class="desc">Mixed Korean Tempura</div></div></div>
+
+<div class="item"><img src="images/kitchen/gamja.jpg"><div class="item-text"><div class="item-name">Gamja Jeon <span class="badge">🟢</span></div><div class="price">₹200</div><div class="desc">Korean Potato Cheese Pancakes.</div></div></div>
+
+<div class="item"><img src="images/kitchen/sotteok.jpg"><div class="item-text"><div class="item-name">Sotteok <span class="badge">🔺</span></div><div class="price">₹150</div><div class="desc">A mouthwatering Korean street food that pairs chewy rice cakes with savory sausages</div></div></div>
+
+<div class="item"><img src="images/kitchen/fries_salted.jpg"><div class="item-text"><div class="item-name">Salted French Fries <span class="badge">🟢</span></div><div class="price">₹80</div><div class="desc">Classic Salted French Fries</div></div></div>
+
+<div class="item"><img src="images/kitchen/fries_peri.jpg"><div class="item-text"><div class="item-name">Peri-Peri Fries <span class="badge">🟢</span></div><div class="price">₹100</div><div class="desc">French Fries with Peri Peri Masala</div></div></div>
 
 </div>
 </div>
@@ -141,27 +169,59 @@ body {
 <!-- RAMYUN -->
 <div id="ramyun" class="tab-content">
 <div class="section-title">Ramyun</div>
+
+<div class="subcat">Veg Ramyun</div>
 <div class="menu-grid">
-
-<div class="item"><img src="images/ramyun/buldak3x.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>3X Spicy Buldak</div><div class="price">₹250</div><div class="spice">🌶️🌶️🌶️🌶️ Very Spicy</div></div></div>
-
-<div class="item"><img src="images/ramyun/shin_veg.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Shin Ramyun Veg</div><div class="price">₹250</div><div class="spice">🌶️🌶️ Medium</div></div></div>
-
-<!-- ALL other ramyun items -->
-
+<div class="item"><img src="images/ramyun/jin_spicy.jpg"><div class="item-text"><div class="item-name">Jin Spicy <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/jin_mild.jpg"><div class="item-text"><div class="item-name">Jin Mild <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/yuel.jpg"><div class="item-text"><div class="item-name">Yuel Ramen <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/shin_veg.jpg"><div class="item-text"><div class="item-name">Shin Ramyun (Veg) <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/cheesy.jpg"><div class="item-text"><div class="item-name">Cheesy Spicy Ramen <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/rabokki.jpg"><div class="item-text"><div class="item-name">Rabokki Noodle <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/jjajangmen.jpg"><div class="item-text"><div class="item-name">Jjajangmen <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/jin_veggie.jpg"><div class="item-text"><div class="item-name">Jin Veggie <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/kimchi.jpg"><div class="item-text"><div class="item-name">Kimchi Ramen <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/samyang.jpg"><div class="item-text"><div class="item-name">Samyang Ramen <span class="badge">🟢</span></div><div class="price">₹250</div></div></div>
 </div>
+
+<div class="subcat">Non-Veg Ramyun</div>
+<div class="menu-grid">
+<div class="item"><img src="images/ramyun/buldak3x.jpg"><div class="item-text"><div class="item-name">3X Spicy Buldak <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/buldak2x.jpg"><div class="item-text"><div class="item-name">2X Spicy Buldak <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/buldak.jpg"><div class="item-text"><div class="item-name">Buldak Chicken <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/cheese_buldak.jpg"><div class="item-text"><div class="item-name">Cheese Buldak <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/jajang_buldak.jpg"><div class="item-text"><div class="item-name">Jajang Buldak <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/carbonara.jpg"><div class="item-text"><div class="item-name">Carboanara Buldak <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/cream_carbonara.jpg"><div class="item-text"><div class="item-name">Cream Carbonara <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/stir_cheese.jpg"><div class="item-text"><div class="item-name">Stir-Fry Cheese Ramen <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/shin_nonveg.jpg"><div class="item-text"><div class="item-name">Shin Ramyun (Non-Veg) <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/neoguri.jpg"><div class="item-text"><div class="item-name">Neoguri <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/chapagetti.jpg"><div class="item-text"><div class="item-name">Chapagetti <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+<div class="item"><img src="images/ramyun/budae.jpg"><div class="item-text"><div class="item-name">Budae Jjigae <span class="badge">🔺</span></div><div class="price">₹250</div></div></div>
+</div>
+
 </div>
 
 <!-- TOPPINGS -->
 <div id="toppings" class="tab-content">
-<div class="section-title">Toppings</div>
+<div class="section-title">Ramyun Toppings</div>
 <div class="menu-grid">
 
-<div class="item"><img src="images/toppings/egg.jpg"><div class="item-text"><div class="item-name"><span class="dot nonveg"></span>Boiled Egg</div><div class="price">₹50</div></div></div>
-
-<div class="item"><img src="images/toppings/corn.jpg"><div class="item-text"><div class="item-name"><span class="dot veg"></span>Sweet Corn</div><div class="price">₹15</div></div></div>
-
-<!-- ALL toppings -->
+<div class="item"><img src="images/toppings/bokchoy.jpg"><div class="item-text"><div class="item-name">Bok Choi <span class="badge">🟢</span></div><div class="price">₹15</div></div></div>
+<div class="item"><img src="images/toppings/mushroom.jpg"><div class="item-text"><div class="item-name">Button Mushroom <span class="badge">🟢</span></div><div class="price">₹25</div></div></div>
+<div class="item"><img src="images/toppings/corn.jpg"><div class="item-text"><div class="item-name">Sweet Corn <span class="badge">🟢</span></div><div class="price">₹15</div></div></div>
+<div class="item"><img src="images/toppings/capsicum.jpg"><div class="item-text"><div class="item-name">Capsicum <span class="badge">🟢</span></div><div class="price">₹25</div></div></div>
+<div class="item"><img src="images/toppings/garlic.jpg"><div class="item-text"><div class="item-name">Fried Garlic <span class="badge">🟢</span></div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/toppings/tteokbokki.jpg"><div class="item-text"><div class="item-name">Tteokpokki <span class="badge">🟢</span></div><div class="price">₹40</div></div></div>
+<div class="item"><img src="images/toppings/shredded_cheese.jpg"><div class="item-text"><div class="item-name">Shredded Cheese <span class="badge">🟢</span></div><div class="price">₹40</div></div></div>
+<div class="item"><img src="images/toppings/cheese_slice.jpg"><div class="item-text"><div class="item-name">Cheese Slice <span class="badge">🟢</span></div><div class="price">₹30</div></div></div>
+<div class="item"><img src="images/toppings/sausage.jpg"><div class="item-text"><div class="item-name">Frankfurter Sausage <span class="badge">🔺</span></div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/toppings/chasu.jpg"><div class="item-text"><div class="item-name">Pork Chasu <span class="badge">🔺</span></div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/toppings/egg.jpg"><div class="item-text"><div class="item-name">Boiled Egg <span class="badge">🔺</span></div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/toppings/sunnyside.jpg"><div class="item-text"><div class="item-name">Sunny Side <span class="badge">🔺</span></div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/toppings/seaweed.jpg"><div class="item-text"><div class="item-name">Seaweed Mini Sheets <span class="badge">🟢</span></div><div class="price">₹85</div></div></div>
+<div class="item"><img src="images/toppings/crushed_seaweed.jpg"><div class="item-text"><div class="item-name">Crushed Seaweed <span class="badge">🟢</span></div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/toppings/chilli_oil.jpg"><div class="item-text"><div class="item-name">Chilly Oil <span class="badge">🟢</span></div><div class="price">₹30</div></div></div>
 
 </div>
 </div>
@@ -169,15 +229,62 @@ body {
 <!-- BEVERAGES -->
 <div id="beverages" class="tab-content">
 <div class="section-title">Beverages</div>
+
+<div class="subcat">Fruit Flavored Drinks</div>
 <div class="menu-grid">
-
-<div class="item"><img src="images/beverages/mango.jpg"><div class="item-text"><div class="item-name">Mango Ade</div><div class="price">₹150</div></div></div>
-
-<div class="item"><img src="images/beverages/coffee.jpg"><div class="item-text"><div class="item-name">Maxim Coffee</div><div class="price">₹50</div></div></div>
-
-<!-- ALL beverages -->
-
+<div class="item"><img src="images/beverages/watermelon.jpg"><div class="item-text"><div class="item-name">Cafe Real Watermelon Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/muscat.jpg"><div class="item-text"><div class="item-name">Cafe Real Shine Muscat Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/mango.jpg"><div class="item-text"><div class="item-name">Cafe Real Mango Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/peach.jpg"><div class="item-text"><div class="item-name">Cafe Real Peach Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/lemon.jpg"><div class="item-text"><div class="item-name">Cafe Real Lemonade Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/grape.jpg"><div class="item-text"><div class="item-name">Ice Talk Green Grape Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/kiwi.jpg"><div class="item-text"><div class="item-name">Ice Talk Kiwi Ade</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/haitai_grape.jpg"><div class="item-text"><div class="item-name">Haitai Grape</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/haitai_pear.jpg"><div class="item-text"><div class="item-name">Haitai Pear</div><div class="price">₹150</div></div></div>
 </div>
+
+<div class="subcat">Milk Based Drinks</div>
+<div class="menu-grid">
+<div class="item"><img src="images/beverages/banana_milk.jpg"><div class="item-text"><div class="item-name">Binggrae Banana Flavored Milk</div><div class="price">₹200</div></div></div>
+<div class="item"><img src="images/beverages/strawberry_milk.jpg"><div class="item-text"><div class="item-name">Binggrae Strawberry Flavored Milk</div><div class="price">₹200</div></div></div>
+<div class="item"><img src="images/beverages/coffee_milk.jpg"><div class="item-text"><div class="item-name">Binggrae Coffee Flavored Milk</div><div class="price">₹200</div></div></div>
+<div class="item"><img src="images/beverages/melon_milk.jpg"><div class="item-text"><div class="item-name">Pokka Melon Flavored MIlk</div><div class="price">₹100</div></div></div>
+</div>
+
+<div class="subcat">Ice Tea Drinks</div>
+<div class="menu-grid">
+<div class="item"><img src="images/beverages/lemon_tea.jpg"><div class="item-text"><div class="item-name">Pokka Ice Lemon Tea</div><div class="price">₹110</div></div></div>
+<div class="item"><img src="images/beverages/peach_tea.jpg"><div class="item-text"><div class="item-name">Pokka Ice Peach Tea</div><div class="price">₹110</div></div></div>
+</div>
+
+<div class="subcat">Ice Coffee Drinks</div>
+<div class="menu-grid">
+<div class="item"><img src="images/beverages/americano.jpg"><div class="item-text"><div class="item-name">Ice Talk Americano Black</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/latte.jpg"><div class="item-text"><div class="item-name">Jardin Signature Cafe Latte</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/sweet_americano.jpg"><div class="item-text"><div class="item-name">Roastique Americano Sweet</div><div class="price">₹150</div></div></div>
+<div class="item"><img src="images/beverages/hazelnut.jpg"><div class="item-text"><div class="item-name">Roastiqu Sweet Hazelnut</div><div class="price">₹150</div></div></div>
+</div>
+
+<div class="subcat">Instant Coffee (Hot)</div>
+<div class="menu-grid">
+<div class="item"><img src="images/beverages/maxim_white.jpg"><div class="item-text"><div class="item-name">Maxim White Gold</div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/beverages/maxim_original.jpg"><div class="item-text"><div class="item-name">Maxim Original Coffee</div><div class="price">₹50</div></div></div>
+<div class="item"><img src="images/beverages/maxim_supreme.jpg"><div class="item-text"><div class="item-name">Maxim Supreme Gold Coffee</div><div class="price">₹70</div></div></div>
+<div class="item"><img src="images/beverages/kanu.jpg"><div class="item-text"><div class="item-name">Kanu Black Coffee</div><div class="price">₹70</div></div></div>
+</div>
+
+<div class="subcat">Carbonated Drinks</div>
+<div class="menu-grid">
+<div class="item"><img src="images/beverages/welch.jpg"><div class="item-text"><div class="item-name">Welch's Grape Soda</div><div class="price">₹200</div></div></div>
+<div class="item"><img src="images/beverages/sprite.jpg"><div class="item-text"><div class="item-name">Sprite+ Lemon Zero Sugar</div><div class="price">₹160</div></div></div>
+<div class="item"><img src="images/beverages/vanilla_coke.jpg"><div class="item-text"><div class="item-name">Vanilla Coke</div><div class="price">₹160</div></div></div>
+</div>
+
+<div class="subcat">Water</div>
+<div class="menu-grid">
+<div class="item"><img src="images/beverages/water.jpg"><div class="item-text"><div class="item-name">Bottled Mineral Water</div><div class="price">₹10</div></div></div>
+</div>
+
 </div>
 
 <script>
